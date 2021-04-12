@@ -141,7 +141,12 @@ namespace ImGuiNET.Unity
 
         static void UpdateMouse(ImGuiIOPtr io)
         {
-            io.MousePos = ImGuiUn.ScreenToImGui(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+            var yyy = ImGuiUn.ScreenToImGui(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+            //io.MousePos = ImGuiUn.ScreenToImGui(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+            io.MousePos.x = yyy.x;
+            io.MousePos.y = yyy.y;
+
+            var xxx = ImGui.GetMousePos();
 
             io.MouseWheel  = Input.mouseScrollDelta.y;
             io.MouseWheelH = Input.mouseScrollDelta.x;
