@@ -141,10 +141,7 @@ namespace ImGuiNET.Unity
 
         static void UpdateMouse(ImGuiIOPtr io)
         {
-            var yyy = ImGuiUn.ScreenToImGui(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-            //io.MousePos = ImGuiUn.ScreenToImGui(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-            io.MousePos.x = yyy.x;
-            io.MousePos.y = yyy.y;
+            io.MousePos = ImGuiUn.ScreenToImGui(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
 
             var xxx = ImGui.GetMousePos();
 
